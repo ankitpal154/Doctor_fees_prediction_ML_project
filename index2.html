@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+   
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Registration Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("{{ url_for('static', filename='Consult.jpg') }}");; 
+      background-color: lightblue;
+      background-repeat: no-repeat;
+      background-size: 800px auto;
+      background-position: left center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      width: 100vh;
+      margin: 0;
+
+    }.container {
+      width: 400px;
+      position: relative;
+      top:70px;
+      left:450px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 61px;
+    margin-left: 527px;
+    }
+    img {
+     width: 250px;
+     height: auto;
+    }
+    select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  .Num{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+  }
+
+    .container h2 {
+      text-align: center;
+    }
+
+    .container input[type="text"],
+    .container input[type="password"],
+    .container input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .container button:hover {
+      background-color: #45a049;
+    }
+
+    .predict-fees-row {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .predict-fees-row label {
+      display: block;
+      margin-bottom: 5px;
+
+    }
+    h1
+    { 
+      position:absolute;
+      left:500px;
+      top:10px;
+      margin-bottom: 10px;
+
+    }
+
+    .predict-fees-row input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .predict-fees-row button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .predict-fees-row button:hover {
+      background-color: #45a049;
+    }
+
+  </style>  
+   <script>
+    function showPredictFeesRow() {
+      var predictFeesRow = document.getElementById("predict-fees-row");
+      predictFeesRow.style.display = "block";
+    }
+  </script>
+
+</head>
+<body>
+  <!-- <img src="E:\Proco\Chiropractic.jpg" alt="I dont know"> -->
+    <h1 style="text-align: center; margin-top: 20px;">Consultant Fees Prediction</h1>
+  <div class="container">
+    <h2>Fees Prediction</h2>
+    <form action="/predict" method="post">
+        <!-- <input type="text" name="Speciality" placeholder="Speciality of Doctor" required> -->
+        <select name="Speciality" required>
+          <option value="" disabled selected aria-placeholder="Select Location">Speciality</option>
+          <option value="Cardiologist">Cardiologist</option>
+          <option value="Dentist">Dentist</option>
+          <option value="Gynecologist">Gynecologist</option>
+          <option value="Pediatrician">Pediatrician</option>
+          <option value="Orthopedist">Orthopedist</option>
+          <option value="Dermatologist">Dermatologist</option>
+          <option value="Physiotherapist">Physiotherapist</option>
+          <option value="Neurologist">Neurologist</option>
+          <option value="Neurosurgeon">Neurosurgeon</option>
+          <option value="Dietitian">Dietitian</option>
+          <option value="Gastroenterologist">Gastroenterologist</option>
+          <option value="Infertility Specialist">Infertility Specialist</option>
+          <option value="Ophthalmologist">Ophthalmologist</option>
+          <option value="Psychiatrist">Psychiatrist</option>
+          <option value="Urologist">Urologist</option>
+          <option value="Pulmonologist">Pulmonologist</option>
+          <option value="Rheumatologists">Rheumatologists</option>
+          <option value="Chiropractor">Chiropractor</option>
+          <option value="Bariatric">Bariatric</option>
+
+        <input type="text" name="Degree" placeholder="Degree Type" required>
+        <input type="number" class="Num" name="YrEx" placeholder="Year of Experience" required>
+        <select name="City" required>
+          <option value="" disabled selected aria-placeholder="Select Location">City</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Bangalore">Bangalore</option>
+          <!-- Add more options as needed -->
+        </select>
+
+        <!-- <input type="text" name="City" placeholder="City" required> -->
+        <input type="number" class="Num" name="DP" placeholder="DP Score" required>
+        <input type="number"  class="Num" name="NPV" placeholder="NPV" required>
+        <button type="submit" onclick="showPredictFeesRow()" >Predict</button>
+        
+      </form>
+      {% if Fees %}
+      <label class="predict-fees-row" id="predict-fees-row" for="Predicted Fees">Fees: {{Fees}}</label>
+       {% else %}
+       <label class="predict-fees-row" id="predict-fees-row" style="display: none;" for="Predicted Fees">Fees:</label>
+       {% endif %}
+      
+    
+      
+    
+  </div>
+</body>
+</html>
