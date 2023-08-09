@@ -15,19 +15,31 @@ This project aims to create a web interface that allows users to predict doctor 
 ## Findings from the Doctor Fee Prediction Project 🧪
 
 - According to the Practo dataset, Bangalore has the highest number of doctors.
+
+  ![Screenshot 2023-08-09 233443](https://github.com/ankitpal154/Doctor_fees_prediction_ML_project/assets/139064260/4eba4a20-39cc-4798-98f7-c4b8c8b64c09)
+
   
 - The most common degrees among doctors are MBBS, MD, and BDS, with the highest representation in the dataset.
-  
+
+
+  ![Screenshot 2023-08-09 233626](https://github.com/ankitpal154/Doctor_fees_prediction_ML_project/assets/139064260/5949c211-4fd8-4e0f-b9e5-eff349eace32)
+
 - The dataset indicates that the three most prominent specialties among doctors are:
   - Dentist
   - Gynecologist
   - Pediatrician
+ 
 
-        
+
+   ![Screenshot 2023-08-09 233739](https://github.com/ankitpal154/Doctor_fees_prediction_ML_project/assets/139064260/26f61e31-0e63-4120-a245-5a8f15a4f75f)
+
  <br>
 
 
 ## 🏥 Doctor Fee Prediction ML Model Creation Steps 🧠
+
+
+![Screenshot 2023-08-09 233938](https://github.com/ankitpal154/Doctor_fees_prediction_ML_project/assets/139064260/1580c2f7-4a16-497e-a620-bca0f9a9d749)
 
 **1. Data Collection:** Gathered doctor-related information from Practo using web scraping techniques with Selenium.
 
@@ -44,6 +56,13 @@ This project aims to create a web interface that allows users to predict doctor 
 **7. Weighted Voting:** Implemented a Weighted Voting technique, combining predictions from multiple models, each with a specific weight.
 
 **8. Model Evaluation:** Evaluated the ensemble model using appropriate metrics such as Mean Absolute Error (MAE) or Root Mean Squared Error (RMSE) to measure prediction accuracy.
+
+
+![Screenshot 2023-08-09 234117](https://github.com/ankitpal154/Doctor_fees_prediction_ML_project/assets/139064260/0f0c70f0-fe2b-45fd-b63e-481f91cf0311)
+
+
+![Screenshot 2023-08-09 234154](https://github.com/ankitpal154/Doctor_fees_prediction_ML_project/assets/139064260/799feea6-a700-480b-b23c-5d07a9ed91ce)
+
 
 **9. Web App Development:** Developed a user-friendly web application using Flask, HTML, and CSS to offer an intuitive interface for users to input parameters.
 
