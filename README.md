@@ -70,3 +70,21 @@ This project aims to create a web interface that allows users to predict doctor 
 
  <p align="center"><img src="https://github.com/Sannidhi-Shetty2/Doctor-Fee-Prediction/assets/62684303/92d53380-68d4-4289-8d43-4e386d3b2025" width="500" ></p>
  
+## 🏥 Challenges and Learnings
+
+**1. Feature Engineering:** Handled complex features, especially those with diverse and numerous categories. 
+
+**2. Model Selection:**  Explored different ML models to identify the Best models.
+
+**3. Hyperparameter Tunning:**  Hyperparameter tuning was time-consuming due to limited time for model development
+
+**4. Model Deployment:**  Explored model deployment options.
+
+ 
+## 🏥 Conclusion
+
+**1. Healthcare Accessibility:** By giving patients an idea of potential costs, it helps them seek appropriate medical care without the barrier of uncertainty about fees.
+
+**2. Transparency and Trust:**  Clear fee estimates foster trust and confidence in medical services, enhancing the doctor-patient relationship.
+
+**3. Efficiency for Providers:** With fee estimates readily available, administrative processes become smoother, leading to improved overall service efficiency.
